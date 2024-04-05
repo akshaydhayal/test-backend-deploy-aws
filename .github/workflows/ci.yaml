@@ -28,14 +28,14 @@ jobs:
     steps:
       - name: zero step
         env:
-          NAME:${{secrets.NAME}}
+          NAME: ${{secrets.NAME}}
         run: echo "$NAME"
 
       - name: checkout code
         uses: actions/checkout@v2
 
       - name: ssh and deploy
-        env: SSH_KEY:${{secrets.SSH_KEY}}
+        env: SSH_KEY: ${{secrets.SSH_KEY}}
         run: |
           echo $SSH_KEY
           echo $SSH_KEY <KEYFILE
