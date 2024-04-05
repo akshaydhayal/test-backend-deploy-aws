@@ -43,7 +43,7 @@ jobs:
       - name: first step
         env:
           NAME: ${{secrets.NAME}}
-        run: exho "Hello World" $NAME
+        run: echo "Hello World" $NAME
 
-      - name: second setp
+      - name: second step
         run: echo "Hello"
