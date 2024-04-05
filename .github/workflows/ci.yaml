@@ -10,10 +10,40 @@ jobs:
     name: deploy
     runs-on: ubuntu-latest
     steps:
-      name: step1
-      env:
-        NAME: ${{secrets.NAME}}
-      run: echo $NAME
+      - name: step1
+        env:
+          NAME: ${{ secrets.NAME }}
+        run: echo $NAME
+
+
+
+
+# name: Deploy
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   deploy_code:
+#     name: deploy
+#     runs-on: ubuntu-latest
+#     steps:
+#       name: step1
+#       env:
+#         NAME: ${{secrets.NAME}}
+#       run: echo $NAME
+
+
+
+
+
+
+
+
+
+
 # jobs:
 #   my-job:
 #     name: My Job
