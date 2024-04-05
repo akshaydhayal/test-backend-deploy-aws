@@ -40,4 +40,6 @@ jobs:
         run: |
           echo "$SSH_KEY"
           echo "$SSH_KEY" > keyfile
+          mkdir ~/.ssh
+          cp known_hosts ~/.ssh/known_hosts
           ssh -i keyfile ubuntu@ec2-13-53-176-103.eu-north-1.compute.amazonaws.com sudo source deploy.sh
