@@ -40,10 +40,12 @@ jobs:
     name: deploy on aws
     runs-on: ubuntu-latest
     steps:
-      - name: first step
-        env:
-          NAME: ${{secrets.NAME}}
-        run: echo "Hello World" $NAME
+      - name: checkout code
+        uses: action/checkout 
 
-      - name: second step
-        run: echo "Hello"
+      - name: ssh and deploy
+        env:
+          SSH_KEY:${{secrets.SSH_KEY}}
+        run: 
+          echo $SSH_KEY <KEYFILE
+          ssh -i KEYFILE ubsuntu@ec2-13-53-176-103.eu-north-1.compute.amazonaws.com sudo source deploy.sh
