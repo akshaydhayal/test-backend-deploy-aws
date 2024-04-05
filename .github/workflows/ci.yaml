@@ -15,20 +15,6 @@
 #           NAME: ${{secrets.NAME}}
 #         run: echo $NAME
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 name: Deploy Code
 on:
   push:
@@ -41,11 +27,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        uses: action/checkout 
+        uses: actions/checkout@v2
 
       - name: ssh and deploy
-        env:
-          SSH_KEY:${{secrets.SSH_KEY}}
-        run: 
-          echo $SSH_KEY <KEYFILE
+        env: SSH_KEY:${{secrets.SSH_KEY}}
+        run: echo $SSH_KEY <KEYFILE
           ssh -i KEYFILE ubsuntu@ec2-13-53-176-103.eu-north-1.compute.amazonaws.com sudo source deploy.sh
