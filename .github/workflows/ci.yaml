@@ -12,35 +12,38 @@
 #     steps:
 #       - name: step1
 #         env:
-#           NAME: ${{ secrets.NAME }}
+#           NAME: ${{secrets.NAME}}
 #         run: echo $NAME
 
-name: Deploy
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+name: Deploy Code
 on:
   push:
     branches:
       - main
 
 jobs:
-  deploy_code:
-    name: deploy
+  deploy code job:
+    name: deploy on aws
     runs-on: ubuntu-latest
     steps:
-      - name: step1
+      - name: first step
         env:
           NAME: ${{secrets.NAME}}
-        run: echo $NAME
-# jobs:
-#   my-job:
-#     name: My Job
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Print a greeting
-#         env:
-#           MY_VAR: Hi there! My name is
-#           FIRST_NAME: Mona
-#           MIDDLE_NAME: The
-#           LAST_NAME: Octocat
-#         run: |
-#           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+        run: exho "Hello World" $NAME
+
+      - name: second setp
+        run: echo "Hello"
