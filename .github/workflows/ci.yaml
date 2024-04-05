@@ -36,7 +36,7 @@ on:
       - main
 
 jobs:
-  deploy code job:
+  deploy_code_job:
     name: deploy on aws
     runs-on: ubuntu-latest
     steps:
