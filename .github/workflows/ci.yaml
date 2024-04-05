@@ -1,8 +1,8 @@
-name : Deploy
+name: Deploy
 
-on: 
+on:
   push:
-    brnaches:
+    branches:
       - main
 
 jobs:
@@ -11,12 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       name: step1
-      env: 
+      env:
         NAME: ${{secrets.NAME}}
       run: echo $NAME
-
-
-
 # jobs:
 #   my-job:
 #     name: My Job
