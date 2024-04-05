@@ -3,7 +3,7 @@ name : Deploy
 on: 
   push:
     brnaches:
-      -main
+      - main
 
 jobs:
   deploy_code:
