@@ -3,5 +3,4 @@ cd test-backend-deploy-aws
 git pull origin main
 cd server
 npx pm2 kill
-npm install
 npx pm2 start index.js
